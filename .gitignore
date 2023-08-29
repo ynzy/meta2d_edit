@@ -27,5 +27,6 @@ coverage
 *.sln
 *.sw?
 
-auto-import.d.ts
-.eslintrc-auto-import.json
+*auto-import.d.ts
+*.eslintrc-auto-import.json
+*components.d.ts
