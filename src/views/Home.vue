@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 <template>
-  <div>主页面</div>
+  <Meta2d></Meta2d>
 </template>
 <style lang="scss" scoped></style>
