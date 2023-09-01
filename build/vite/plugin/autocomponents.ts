@@ -14,7 +14,9 @@ export function configAutoComponentsPlugin() {
       TDesignResolver({
         library: 'vue-next'
       }),
-      AntDesignVueResolver()
+      AntDesignVueResolver({
+        importStyle: false
+      })
     ],
     extensions: ['vue', 'tsx'],
     // 配置文件生成位置
