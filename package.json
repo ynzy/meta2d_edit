@@ -20,6 +20,7 @@
     "@meta2d/form-diagram": "^1.0.7",
     "@meta2d/sequence-diagram": "^1.0.0",
     "@meta2d/svg": "^1.0.3",
+    "ant-design-vue": "^4.0.2",
     "axios": "^1.4.0",
     "mitt": "^3.0.1",
     "pinia": "^2.1.6",

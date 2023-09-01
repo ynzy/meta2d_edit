@@ -3,14 +3,15 @@
  * https://github.com/antfu/unplugin-auto-import
  */
 import AutoImport from 'unplugin-auto-import/vite';
-import { TDesignResolver } from 'unplugin-vue-components/resolvers';
+import { TDesignResolver, AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 
 export function configAutoImportPlugin() {
   return AutoImport({
     resolvers: [
       TDesignResolver({
         library: 'vue-next'
-      })
+      }),
+      AntDesignVueResolver()
     ],
     imports: ['vue', 'pinia', 'vue-router'],
     // 可以选择auto-import.d.ts生成的位置，使用ts建议设置为'src/auto-import.d.ts'

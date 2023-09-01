@@ -3,7 +3,7 @@
  * https://github.com/antfu/unplugin-vue-components
  */
 import Components from 'unplugin-vue-components/vite';
-import { TDesignResolver } from 'unplugin-vue-components/resolvers';
+import { TDesignResolver, AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 
 export function configAutoComponentsPlugin() {
   return Components({
@@ -13,7 +13,8 @@ export function configAutoComponentsPlugin() {
     resolvers: [
       TDesignResolver({
         library: 'vue-next'
-      })
+      }),
+      AntDesignVueResolver()
     ],
     extensions: ['vue', 'tsx'],
     // 配置文件生成位置
