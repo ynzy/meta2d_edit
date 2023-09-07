@@ -44,45 +44,44 @@ const menus = reactive({
     { 'key': 'map', 'name': '缩略图', 'icon': 't-icon t-ditu', 'action': 'showMap' }
   ],
   'right': [
-    { 'name': '预览', 'icon': 't-icon t-attention', 'isShow': true, 'action': 'preview' },
-    { 'name': '分享', 'icon': 't-icon t-share', 'isShow': true, 'action': 'share' },
-    {
-      'name': '社区',
-      'icon': 't-icon t-shequ',
-      'isShow': true,
-      'children': [
-        { 'name': 'Github', 'url': 'https://github.com/le5le-com', 'target': '_blank' },
-        { 'name': '核心库', 'url': 'https://github.com/le5le-com/meta2d.js' },
-        { 'name': '技术交流群', 'url': 'https://doc.le5le.com/document/120479036', 'target': '_blank' }
-      ]
-    },
-    {
-      'name': '帮助',
-      'icon': 't-icon t-help-circle',
-      'isShow': true,
-      'children': [
-        { 'name': '产品介绍', 'url': 'https://doc.le5le.com/document/118756411', 'target': '_blank' },
-        { 'name': '文档', 'url': 'https://doc.le5le.com/', 'target': '_blank' },
-        { 'name': '快速入门', 'url': 'https://doc.le5le.com/document/118856436', 'target': '_blank' },
-        { 'name': '视频教程', 'url': 'https://doc.le5le.com/document/119304389', 'target': '_blank' },
-        { 'name': '组态教程', 'url': 'https://doc.le5le.com/document/119019399', 'target': '_blank' },
-        { 'name': '用户手册', 'url': 'https://doc.le5le.com/document/118764244', 'target': '_blank' },
-        { 'name': '开发教程', 'url': 'https://doc.le5le.com/document/119359590', 'target': '_blank' },
-        { 'name': 'Meta2d.js API', 'url': 'https://doc.le5le.com/document/119882449', 'target': '_blank' },
-        { 'name': '常见问题', 'url': 'https://doc.le5le.com/document/119294704', 'target': '_blank' },
-        {},
-        { 'name': '企业版价格', 'url': 'https://doc.le5le.com/document/119296274', 'target': '_blank' },
-        {},
-        { 'name': '关于我们', 'url': 'https://le5le.com/about.html', 'target': '_blank' }
-      ]
-    }
+    { 'name': '预览', 'icon': 't-icon t-attention', 'isShow': true, 'action': 'preview' }
+    // { 'name': '分享', 'icon': 't-icon t-share', 'isShow': true, 'action': 'share' },
+    // {
+    //   'name': '社区',
+    //   'icon': 't-icon t-shequ',
+    //   'isShow': true,
+    //   'children': [
+    //     { 'name': 'Github', 'url': 'https://github.com/le5le-com', 'target': '_blank' },
+    //     { 'name': '核心库', 'url': 'https://github.com/le5le-com/meta2d.js' },
+    //     { 'name': '技术交流群', 'url': 'https://doc.le5le.com/document/120479036', 'target': '_blank' }
+    //   ]
+    // },
+    // {
+    //   'name': '帮助',
+    //   'icon': 't-icon t-help-circle',
+    //   'isShow': true,
+    //   'children': [
+    //     { 'name': '产品介绍', 'url': 'https://doc.le5le.com/document/118756411', 'target': '_blank' },
+    //     { 'name': '文档', 'url': 'https://doc.le5le.com/', 'target': '_blank' },
+    //     { 'name': '快速入门', 'url': 'https://doc.le5le.com/document/118856436', 'target': '_blank' },
+    //     { 'name': '视频教程', 'url': 'https://doc.le5le.com/document/119304389', 'target': '_blank' },
+    //     { 'name': '组态教程', 'url': 'https://doc.le5le.com/document/119019399', 'target': '_blank' },
+    //     { 'name': '用户手册', 'url': 'https://doc.le5le.com/document/118764244', 'target': '_blank' },
+    //     { 'name': '开发教程', 'url': 'https://doc.le5le.com/document/119359590', 'target': '_blank' },
+    //     { 'name': 'Meta2d.js API', 'url': 'https://doc.le5le.com/document/119882449', 'target': '_blank' },
+    //     { 'name': '常见问题', 'url': 'https://doc.le5le.com/document/119294704', 'target': '_blank' },
+    //     {},
+    //     { 'name': '企业版价格', 'url': 'https://doc.le5le.com/document/119296274', 'target': '_blank' },
+    //     {},
+    //     { 'name': '关于我们', 'url': 'https://le5le.com/about.html', 'target': '_blank' }
+    //   ]
+    // }
   ]
 });
 </script>
 <template>
   <div class="Meta2dMenu flex menu">
     <div class="logo">
-      <!-- <img src="" alt="" /> -->
       <div class="img"></div>
       编辑器
     </div>
@@ -92,8 +91,24 @@ const menus = reactive({
           <MenuItem :menuItem="menu" />
         </div>
       </div>
-      <div class="flex">中</div>
-      <div class="flex ml16">右</div>
+      <div class="flex">
+        <div class="middleItem mr30" v-for="menu in menus.middle" :key="menu.key">
+          <MenuItem :menuItem="menu" />
+        </div>
+        <FromArrow class="mr30" />
+        <ToArrow class="mr30" />
+        <DefaultLineStyle class="mr30" />
+        <LineWidth class="mr30" />
+        <ViewScale class="mr30" />
+        <AutoAnchor class="mr30" />
+        <DisableAnchor class="mr30" />
+      </div>
+      <div class="flex ml16">
+        <Lock class="MenuItem" />
+        <div class="rightItem ml24 help-menu" v-for="menu in menus.right" :key="menu.key">
+          <MenuItem :menuItem="menu" />
+        </div>
+      </div>
     </div>
     <div class="loginArea"></div>
   </div>
@@ -126,6 +141,9 @@ const menus = reactive({
     padding: 0 30px;
     justify-content: space-between;
     align-items: center;
+  }
+  .loginArea {
+    width: 80px;
   }
 }
 </style>
