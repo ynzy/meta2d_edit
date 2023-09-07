@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useMeta2dCanvas } from '@/hooks/useMeta2dCanvas';
 import { MessagePlugin } from 'tdesign-vue-next';
 const options = [
   {
@@ -49,25 +50,17 @@ const options = [
 const clickHandler = (data) => {
   MessagePlugin.success(`选中【${data.content}】`);
 };
+
+/**
+ * 创建meta2d实例
+ */
+const meta2dCanvas = useMeta2dCanvas({ id: 'meta2d' });
 </script>
 <template>
   <div class="Meta2dCanvas">
-    <a-dropdown :trigger="['contextmenu']">
+    <Contextmenu>
       <div id="meta2d"></div>
-      <template #overlay>
-        <a-menu>
-          <a-menu-item>
-            <a href="javascript:;">1st menu item</a>
-          </a-menu-item>
-          <a-menu-item>
-            <a href="javascript:;">2nd menu item</a>
-          </a-menu-item>
-          <a-menu-item>
-            <a href="javascript:;">3rd menu item</a>
-          </a-menu-item>
-        </a-menu>
-      </template>
-    </a-dropdown>
+    </Contextmenu>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -80,7 +73,7 @@ const clickHandler = (data) => {
     height: 100%;
     touch-action: none;
     overflow: hidden;
-    background: pink;
+    // background: pink;
   }
 }
 </style>
