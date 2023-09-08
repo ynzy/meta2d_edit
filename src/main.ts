@@ -13,6 +13,14 @@ import 'tdesign-vue-next/es/style/index.css';
 
 const app = createApp(App);
 
+import * as Icons from '@ant-design/icons-vue';
+// 循环使用全部全部图标
+const icons: any = Icons;
+for (const i in icons) {
+  // 全局注册一下组件
+  app.component(i, icons[i]);
+}
+
 app.use(router);
 app.use(store);
 

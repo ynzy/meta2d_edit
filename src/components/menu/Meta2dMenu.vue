@@ -45,6 +45,8 @@ const menusRef = ref(menus);
   background: #ffffff;
   z-index: 2;
   flex-shrink: 0;
+  box-shadow: 0 2px 4px #dad7d7;
+  align-items: center;
   .logo {
     display: flex;
     align-items: center;

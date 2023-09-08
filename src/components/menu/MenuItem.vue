@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface IMenuItemProps {
-  isDownIcon: boolean;
+  isDownIcon?: boolean;
   // active: boolean;
   menuItem: Object;
   // needOperate: boolean;

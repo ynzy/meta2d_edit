@@ -12,6 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "@meta2d/activity-diagram": "^1.0.0",
     "@meta2d/chart-diagram": "^1.0.5",
     "@meta2d/class-diagram": "^1.0.1",

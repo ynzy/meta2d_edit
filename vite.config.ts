@@ -28,7 +28,9 @@ export default defineConfig(({ command, mode }: ConfigEnv) => {
     plugins: [...createVitePlugins(viteEnv, isBuild)],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url))
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+        // 按需加载icons
+        '@ant-design/icons-vue$': fileURLToPath(new URL('./src/assets/antd/icons.js', import.meta.url))
       }
     },
     css: {
